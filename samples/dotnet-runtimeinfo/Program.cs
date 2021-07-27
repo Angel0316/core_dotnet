@@ -7,7 +7,6 @@ using static System.IO.File;
 
 AssemblyInformationalVersionAttribute assemblyInformation = ((AssemblyInformationalVersionAttribute[])typeof(object).Assembly.GetCustomAttributes(typeof(AssemblyInformationalVersionAttribute), false))[0];
 string[] informationalVersionSplit = assemblyInformation.InformationalVersion.Split('+');
-
 WriteLine("**.NET information");
 WriteLine($"{nameof(Environment.Version)}: {Environment.Version}");
 WriteLine($"{nameof(RuntimeInformation.FrameworkDescription)}: {RuntimeInformation.FrameworkDescription}");
@@ -20,7 +19,6 @@ WriteLine($"{nameof(Environment.OSVersion)}: {Environment.OSVersion}");
 WriteLine($"{nameof(RuntimeInformation.OSArchitecture)}: {RuntimeInformation.OSArchitecture}");
 WriteLine($"{nameof(Environment.ProcessorCount)}: {Environment.ProcessorCount}");
 WriteLine();
-
 if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) && 
     Directory.Exists("/sys/fs/cgroup/cpu") &&
     Directory.Exists("/sys/fs/cgroup/memory"))
